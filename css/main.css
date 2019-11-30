@@ -1,0 +1,21 @@
+body{
+    background: url(../images/background2.jpg);
+}
+h1{
+    color:#abe612; 
+    text-align:center; 
+    font-family: 'Righteous', cursive;
+    font-size: 80px
+}
+
+.navbar-brand{
+    color:#6193cd; 
+    text-align:center;
+    font-family: 'Righteous', cursive; 
+    font-size: 20px
+}
+.ipBox {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px rgb(221,221,221);
+}

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+	<link rel="stylesheet" href="./css/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="./fonts/Righteous-Regular.ttf">
+	<h1>BIO SENSOR</h1>
+
+	<script src="./js/vendor/plotly.min.js"></script>
+	<script src="./js/vendor/jquery-1.8.3.min.js"></script>
+
+<body>
+	<div class="container">
+		<div class="ipBox">
+			<div class="row">
+				<div class="col-md-3">
+					<input id="fileName" type="text" class="form-control" placeholder="Enter file name"
+						value="data.csv">
+				</div>
+				<div class="col-md-3" style="padding-left: 1px;">
+					<button id="updGraph" style="width: 100%" class="btn btn-warning">Plot</button>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-md-3">
+					<input id="plotFileName" type="text" class="form-control" placeholder="File Name" value="data.csv">
+				</div>
+				<div class="col-md-3" style="padding-left: 1px;">
+					<button id="keyboardServo" style="width: 100%" class="btn btn-warning">Servo</button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-11">
+
+			</div>
+			<div class="col-md-1">
+				<button id="close" class="btn btn-danger mt-2" style="float:right;">
+					close
+				</button>
+			</div>
+		</div>
+		<div id="Graph">
+		</div>
+	</div>
+	<script>
+		require('./js/app.js');
+	</script>
+</body>
+
+</html>
