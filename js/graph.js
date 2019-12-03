@@ -14,16 +14,7 @@ function tracecall(x, y, m, c) {
 
 
 var  plotLayout = ()=> {
-    // var script_tag = document.getElementById('searcher')
-    // var c1 = script_tag.getAttribute("c1");
-    // var m1 = script_tag.getAttribute("m1");
-
-    // var c2 = script_tag.getAttribute("c2");
-    // var m2 = script_tag.getAttribute("m2");
-
-    // var c3 = script_tag.getAttribute("c3");
-    // var m3 = script_tag.getAttribute("m3");
-
+    
     var c1 = '#DF56F1';
     var m1 = 'lines';
 
@@ -52,7 +43,7 @@ var  plotLayout = ()=> {
     var m9 = 'lines';
 
     var layout1 = {
-        title: 'Surface Temperature',
+        title: 'Temperature',
         
         xaxis: {
             title: 'Time',
@@ -65,7 +56,7 @@ var  plotLayout = ()=> {
     };
 
     var layout2 = {
-        title: 'Surface Moisture',
+        title: 'Humidity',
         xaxis2: {
             title: 'Time',
             domain: [0, 1]
@@ -77,7 +68,7 @@ var  plotLayout = ()=> {
     };
 
     var layout3 = {
-        title: 'Atmospheric Temperature',
+        title: 'Altitude',
         xaxis3: {
             title: 'Time',
             domain: [0, 1]
@@ -89,7 +80,7 @@ var  plotLayout = ()=> {
     };
 
     var layout4 = {
-        title: 'Atmospheric Humidity',
+        title: 'Pressure',
         xaxis4: {
             title: 'Time',
             domain: [0, 1]
@@ -101,7 +92,7 @@ var  plotLayout = ()=> {
     };
 
     var layout5 = {
-        title: 'Altitude',
+        title: 'Nitrogen',
         xaxis5: {
             title: 'Time',
             domain: [0, 1]
@@ -113,7 +104,7 @@ var  plotLayout = ()=> {
     };
 
     var layout6 = {
-        title: 'Pressure',
+        title: 'CO2',
         xaxis6: {
             title: 'Time',
             domain: [0, 1]
@@ -125,7 +116,7 @@ var  plotLayout = ()=> {
     };
 
     var layout7 = {
-        title: 'Ammonia',
+        title: 'VOC',
         xaxis7: {
             title: 'Time',
             domain: [0, 1]
@@ -136,29 +127,6 @@ var  plotLayout = ()=> {
         },
     };
 
-    var layout8 = {
-        title: 'Ozone',
-        xaxis8: {
-            title: 'Time',
-            domain: [0, 1]
-        },
-        yaxis8: {
-            title: 'ppm',
-            domain: [0, 0.90]
-        },
-    };
-
-    var layout9 = {
-        title: 'C02',
-        xaxis9: {
-            title: 'Time',
-            domain: [0, 1]
-        },
-        yaxis9: {
-            title: 'ppm',
-            domain: [0, 0.90]
-        },
-    };
     var data = [tracecall('x1', 'y1', m1, c1), 
                 tracecall('x2', 'y2', m2, c2),
                 tracecall('x3', 'y3', m3, c3),
@@ -166,8 +134,6 @@ var  plotLayout = ()=> {
                 tracecall('x5', 'y5', m5, c5),
                 tracecall('x6', 'y6', m6, c6),
                 tracecall('x7', 'y7', m7, c7),
-                tracecall('x8', 'y8', m8, c8),
-                tracecall('x9', 'y9', m9, c9), 
                ];
     // TO MAKE EMPTY GRAPHS
     Plotly.plot('graph1', [data[0]], layout2)
@@ -177,11 +143,9 @@ var  plotLayout = ()=> {
     Plotly.plot('graph5', [data[4]], layout5)
     Plotly.plot('graph6', [data[5]], layout6)
     Plotly.plot('graph7', [data[6]], layout7)
-    Plotly.plot('graph8', [data[7]], layout8)
-    Plotly.plot('graph9', [data[8]], layout9)
 }
 
-var plotGraph = (SurTemp, SurMoist, AtmosTemp, AtmosHum, Alt, Press, Ammon, Ozone, CO2, VOC)=> {
+var plotGraph = (Temp, Humidity, Alt, Press, Nitrogen, CO2, VOC)=> {
 
         var time = new Date();
 
@@ -190,7 +154,7 @@ var plotGraph = (SurTemp, SurMoist, AtmosTemp, AtmosHum, Alt, Press, Ammon, Ozon
                 [time]
             ],
             y: [
-                [SurTemp]
+                [Temp]
             ]
         }, [0]);
 
@@ -205,7 +169,7 @@ var plotGraph = (SurTemp, SurMoist, AtmosTemp, AtmosHum, Alt, Press, Ammon, Ozon
                 [time]
             ],
             y: [
-                [SurMoist]
+                [Humidity]
             ]
         }, [0]);
         
@@ -219,7 +183,7 @@ var plotGraph = (SurTemp, SurMoist, AtmosTemp, AtmosHum, Alt, Press, Ammon, Ozon
                 [time]
             ],
             y: [
-                [AtmosTemp]
+                [Alt]
             ]
         }, [0]);
         
@@ -233,7 +197,7 @@ var plotGraph = (SurTemp, SurMoist, AtmosTemp, AtmosHum, Alt, Press, Ammon, Ozon
                 [time]
             ],
             y: [
-                [AtmosHum]
+                [Press]
             ]
         }, [0]);
         
@@ -246,7 +210,7 @@ var plotGraph = (SurTemp, SurMoist, AtmosTemp, AtmosHum, Alt, Press, Ammon, Ozon
                 [time]
             ],
             y: [
-                [Alt]
+                [Nitrogen]
             ]
         }, [0]);
         
@@ -260,7 +224,7 @@ var plotGraph = (SurTemp, SurMoist, AtmosTemp, AtmosHum, Alt, Press, Ammon, Ozon
                 [time]
             ],
             y: [
-                [Press]
+                [CO2]
             ]
         }, [0]);
         
@@ -274,7 +238,7 @@ var plotGraph = (SurTemp, SurMoist, AtmosTemp, AtmosHum, Alt, Press, Ammon, Ozon
                 [time]
             ],
             y: [
-                [Ammon]
+                [VOC]
             ]
         }, [0]);
         
@@ -282,33 +246,6 @@ var plotGraph = (SurTemp, SurMoist, AtmosTemp, AtmosHum, Alt, Press, Ammon, Ozon
             'xaxis7.range': [time - 5000, time]
         });
 
-
-        Plotly.extendTraces('graph8', {
-            x: [
-                [time]
-            ],
-            y: [
-                [Ozone]
-            ]
-        }, [0]);
-        
-        Plotly.relayout('graph8', {
-            'xaxis8.range': [time - 5000, time]
-        });
-
-
-        Plotly.extendTraces('graph9', {
-            x: [
-                [time]
-            ],
-            y: [
-                [CO2]
-            ]
-        }, [0]);
-        
-        Plotly.relayout('graph9', {
-            'xaxis9.range': [time - 5000, time]
-        });
  }
 
 module.exports.plotLayout = plotLayout;

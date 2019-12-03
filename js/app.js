@@ -15,10 +15,11 @@ $('#keyboardServo').click(function () {
 			    link.sendData(data);
 			}, DATA_RATE);
 	} else if ($(this).text() == "Stop") {
-            $(this).removeClass('btn-success').addClass('btn-warning').html('Servo');
+            $(this).removeClass('btn-success').addClass('btn-warning').html('BIOBOX ROTOR');
             clearInterval(keyInterval);
     }
  });
+ 
 
 $('#close').click(function(){
      $('#Graph').html(``);    
