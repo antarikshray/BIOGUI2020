@@ -26,11 +26,11 @@ var setupServer = function () {
       console.log('Error connecting to websocket server: ', error);
   });
 
-  window.rosBio=ros;
+  window.ros=ros;
 
 // topic is created and the node is named listener
   var listener = new ROSLIB.Topic({
-         ros : rosBio,
+         ros : window.ros,
          name : '/sensor_data',
          messageType : 'jetson/BioNeuronSensor'
        });
@@ -150,37 +150,36 @@ var setupServer = function () {
 
 }
 
-var sendData = function (keys) { // data should be string
+// var sendData = function (keys) { // data should be string
 
-    var publisher = new ROSLIB.Topic({
-      ros : window.rosBio,
-      name : '/bioKey',
-      messageType : 'std_msgs/String'
-    });
-    
-    var sendKey = new ROSLIB.Message({
-      data: keys      
-    });
-
-    publisher.publish(sendKey);
-}
-
-// var cameraService = function () {
-
-//   var addTwoIntsClient = new ROSLIB.Service({
-//         ros : window.ros,
-//         name : '/spine_the_nodes',
-//         serviceType : 'jetson/spine'
-//       });
-
-//   var request = new ROSLIB.ServiceRequest({
-//          signal : 1
-//       });
-
-//   addTwoIntsClient.callService(request, function(result) {
-
-//   });
+//     var publisher = new ROSLIB.Topic({
+//       ros : window.ros,
+//       name : '/bioKey',
+//       messageType : 'std_msgs/String'
+//     });
+//     keys="akfhs"
+//     var sendKey = new ROSLIB.Message({
+//       data: keys      
+//     });
+//     publisher.publish(sendKey);
 // }
+
+var cameraService = function (ser) {
+
+  var client = new ROSLIB.Service({
+        ros : window.ros,
+        name : '/capture_image',
+        serviceType : 'jetson/captur'
+      });
+
+  var request = new ROSLIB.ServiceRequest({
+         cap : ser
+      });
+
+  console.log('sent');
+  client.callService(request, function(result) {
+  });
+}
 
 var formFileName = function () {
     var x = $("#fileName").val();
@@ -191,3 +190,4 @@ var formFileName = function () {
 
 module.exports.setupServer = setupServer;
 module.exports.sendData = sendData;
+module.exports.cameraService = cameraService;

@@ -24,9 +24,8 @@ var processKeys = function () {
     Object.keys(keyMap).forEach(function (key) {
         output += (keyMap[key] ? "1" : "0");
     });
-    var ServoControls = parseInt(output.substring(0, 8), 2);
-    
-    return [ServoControls];
+    //var ServoControls = String(output.substring(0, 8), 2);
+    return output;
 }
 
 module.exports.initKeyboard = initKeyboard;
