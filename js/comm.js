@@ -189,5 +189,5 @@ var formFileName = function () {
 }
 
 module.exports.setupServer = setupServer;
-module.exports.sendData = sendData;
+//module.exports.sendData = sendData;
 module.exports.cameraService = cameraService;

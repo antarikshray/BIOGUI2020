@@ -4,6 +4,7 @@ path=$(pwd)
 echo "MY IP IS : $myip"
 jetsonIP=$(python3 $path/gui.py $myip) 
 checkupdate=0000
+
 if [ $jetsonIP == $checkupdate ]; then
     echo "update Script called"
     bash update.sh
@@ -19,9 +20,9 @@ echo ROS_IP=$myip
 echo "Exports done"
 echo "If taking time please check the network u r connected to...."
 echo "Searching for master..."
-source /opt/ros/melodic/setup.bash
-source ~/catkin_ws/devel/setup.bash
 
+source /opt/ros/melodic/setup.bash
+source ~/git_ws/devel/setup.bash
 
 line=$(/opt/ros/melodic/bin/rostopic list /rosout)
 
