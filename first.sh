@@ -22,7 +22,7 @@ echo "If taking time please check the network u r connected to...."
 echo "Searching for master..."
 
 source /opt/ros/melodic/setup.bash
-source ~/git_ws/devel/setup.bash
+source ~/catkin_ws/devel/setup.bash
 
 line=$(/opt/ros/melodic/bin/rostopic list /rosout)
 
