@@ -173,13 +173,26 @@ var Service = function (ser) {
           name : '/spine_the_nodes',
           serviceType : 'jetson/spine'
         });
-
-    var request = new ROSLIB.ServiceRequest({
-           signal : ser
+    if($('#arduino').hasClass('btn-warning')){
+      var request = new ROSLIB.ServiceRequest({
+           signal : 9
         });
+     }
+     else if($('#arduino').hasClass('btn-success')){
+      var request = new ROSLIB.ServiceRequest({
+           signal : -9
+        });
+     } 
 
     clientArduino.callService(request, function(result) {
-      console.log("lol");
+    
+      if($('#arduino').hasClass('btn-warning')&&result.response===9){
+        $('#arduino').removeClass('btn-warning').addClass('btn-success');
+      }
+
+      else if($('#arduino').hasClass('btn-success')&&result.response===-9){
+        $('#arduino').removeClass('btn-success').addClass('btn-warning');
+      }
     });
   }
 }
