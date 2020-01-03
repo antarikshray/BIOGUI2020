@@ -166,6 +166,36 @@ var Service = function (ser) {
     clientCamera.callService(request, function(result) {
     });
   }
+
+  if(ser===2) {
+      var digiCam = new ROSLIB.Service({
+          ros : window.ros,
+          name : '/spine_the_nodes_bio',
+          serviceType : 'jetson/spine'
+        });
+
+      if($('#CameraStart').hasClass('btn-warning')){
+      var request = new ROSLIB.ServiceRequest({
+           signal : 1
+        });
+     }
+     else if($('#CameraStart').hasClass('btn-success')){
+      var request = new ROSLIB.ServiceRequest({
+           signal : -1
+        });
+     }
+
+    digiCam.callService(request, function(result) {
+      
+      if($('#CameraStart').hasClass('btn-warning')&&result.response===1){
+        $('#CameraStart').removeClass('btn-warning').addClass('btn-success');
+      }
+
+      else if($('#CameraStart').hasClass('btn-success')&&result.response===-1){
+        $('#CameraStart').removeClass('btn-success').addClass('btn-warning');
+      }
+    });
+  }
   
   else {
     var clientArduino = new ROSLIB.Service({

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "main.js",
   "scripts": {
-    "start": "concurrently \"rosrun jetson capt_client.py\" \"roslaunch rosbridge_server bio.launch\" \"sleep 3 && electron .\" "
+    "start": "concurrently \"rosrun jetson capt_client.py\" \"roslaunch rosbridge_server bio.launch\" \"rosrun jetson spine_server_bio.py\" \"sleep 3 && electron .\" "
   },
   "author": "",
   "license": "ISC",
