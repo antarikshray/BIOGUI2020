@@ -167,7 +167,7 @@ var Service = function (ser) {
     });
   }
 
-  if(ser===2) {
+  else if(ser===2) {
       var digiCam = new ROSLIB.Service({
           ros : window.ros,
           name : '/spine_the_nodes_bio',
