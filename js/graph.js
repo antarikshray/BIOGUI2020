@@ -145,7 +145,7 @@ var  plotLayout = ()=> {
     Plotly.plot('graph7', [data[6]], layout7)
 }
 
-var plotGraph = (Temp, Humidity, Alt, Press, Nitrogen, CO2, VOC)=> {
+var plotGraph = (Humidity, Temp, Alt, Press, Nitrogen, CO2, VOC)=> {
 
         var time = new Date();
 
