@@ -50,7 +50,7 @@ var  plotLayout = ()=> {
             domain: [0, 1]
         },
         yaxis: {
-            title: 'ppm',
+            title: 'C',
             domain: [0, 0.90]
         },
     };
@@ -74,7 +74,7 @@ var  plotLayout = ()=> {
             domain: [0, 1]
         },
         yaxis3: {
-            title: 'ppm',
+            title: 'meters',
             domain: [0, 0.90]
         },
     };
@@ -86,7 +86,7 @@ var  plotLayout = ()=> {
             domain: [0, 1]
         },
         yaxis4: {
-            title: 'ppm',
+            title: 'Pa',
             domain: [0, 0.90]
         },
     };
@@ -122,7 +122,7 @@ var  plotLayout = ()=> {
             domain: [0, 1]
         },
         yaxis7: {
-            title: 'ppm',
+            title: 'ppb',
             domain: [0, 0.90]
         },
     };

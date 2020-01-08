@@ -85,6 +85,14 @@ var setupServer = function () {
           var Nitrogen = message.Nitrogen;
           var CO2 = message.CO2;
           var VOC = message.VOC;
+          // console.log(message);
+          $('#humtxt').html("HUMIDITY: " + Humidity);
+          $('#temptxt').html("TEMPERATURE: " + Temperature);
+          $('#alttxt').html("ALTITUDE: " + Altitude);
+          $('#presstxt').html("PRESSURE: " + Press);
+          $('#nitrogentxt').html("NITROGEN: " + Nitrogen);
+          $('#CO2txt').html("CARBON DIOXIDE: " + CO2);
+          $('#VOCtxt').html("VOLATILE ORGANIC COMPOUND: " + VOC);
           if(allowPlot) {
          	  graph.plotGraph(Temperature, Humidity, Altitude, Press, Nitrogen, CO2, VOC);
             rite={Temperature, Humidity, Altitude, Press, Nitrogen, CO2, VOC};
