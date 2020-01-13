@@ -7,11 +7,15 @@ $('#camera').click(function () {
 });
 
 $('#arduino').click(function() {
-	link.Service(8);
+	link.Service(9);
 });
 
 $('#CameraStart').click(function () {
-	link.Service(2);
+	link.Service(14);
+});
+
+$('#captserv').click(function () {
+	link.Service(13);
 });
 
 $('#close').click(function(){

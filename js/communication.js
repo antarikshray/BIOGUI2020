@@ -175,37 +175,67 @@ var Service = function (ser) {
     });
   }
 
-  else if(ser===2) {
+  else if(ser===14) {
       var digiCam = new ROSLIB.Service({
           ros : window.ros,
-          name : '/spine_the_nodes_bio',
+          name : '/spine_the_nodes',
           serviceType : 'jetson/spine'
         });
 
       if($('#CameraStart').hasClass('btn-warning')){
       var request = new ROSLIB.ServiceRequest({
-           signal : 1
+           signal : 14
         });
      }
      else if($('#CameraStart').hasClass('btn-success')){
       var request = new ROSLIB.ServiceRequest({
-           signal : -1
+           signal : -14
         });
      }
 
     digiCam.callService(request, function(result) {
       
-      if($('#CameraStart').hasClass('btn-warning')&&result.response===1){
+      if($('#CameraStart').hasClass('btn-warning')&&result.response===14){
         $('#CameraStart').removeClass('btn-warning').addClass('btn-success');
       }
 
-      else if($('#CameraStart').hasClass('btn-success')&&result.response===-1){
+      else if($('#CameraStart').hasClass('btn-success')&&result.response===-14){
         $('#CameraStart').removeClass('btn-success').addClass('btn-warning');
       }
     });
   }
+
+  else if(ser===13){
+    var capterServ = new ROSLIB.Service({
+      ros : window.ros,
+      name : '/spine_the_nodes',
+      serviceType : 'jetson/spine'
+    });
+
+      if($('#captserv').hasClass('btn-warning')){
+      var request = new ROSLIB.ServiceRequest({
+          signal : ser
+        });
+    }
+    else if($('#captserv').hasClass('btn-success')){
+      var request = new ROSLIB.ServiceRequest({
+          signal : -ser
+        });
+    }
+
+    capterServ.callService(request, function(result) {
+      
+      if($('#captserv').hasClass('btn-warning')&&result.response===13){
+        $('#captserv').removeClass('btn-warning').addClass('btn-success');
+      }
+
+      else if($('#captserv').hasClass('btn-success')&&result.response===-13){
+        $('#captserv').removeClass('btn-success').addClass('btn-warning');
+      }
+    });
+  }
   
-  else {
+  else if(ser===9){
     var clientArduino = new ROSLIB.Service({
           ros : window.ros,
           name : '/spine_the_nodes',
@@ -213,12 +243,12 @@ var Service = function (ser) {
         });
     if($('#arduino').hasClass('btn-warning')){
       var request = new ROSLIB.ServiceRequest({
-           signal : 9
+           signal : ser
         });
      }
      else if($('#arduino').hasClass('btn-success')){
       var request = new ROSLIB.ServiceRequest({
-           signal : -9
+           signal : -ser
         });
      } 
 
