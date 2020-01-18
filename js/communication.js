@@ -90,7 +90,7 @@ var setupServer = function () {
           $('#temptxt').html("TEMPERATURE: " + Temperature);
           $('#alttxt').html("ALTITUDE: " + Altitude);
           $('#presstxt').html("PRESSURE: " + Press);
-          $('#nitrogentxt').html("NITROGEN: " + Nitrogen);
+          $('#nitrogentxt').html("AMMONIA: " + Nitrogen);
           $('#CO2txt').html("CARBON DIOXIDE: " + CO2);
           $('#VOCtxt').html("VOLATILE ORGANIC COMPOUND: " + VOC);
           if(allowPlot) {

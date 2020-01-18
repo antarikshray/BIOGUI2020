@@ -92,13 +92,13 @@ var  plotLayout = ()=> {
     };
 
     var layout5 = {
-        title: 'Nitrogen',
+        title: 'Ammonia',
         xaxis5: {
             title: 'Time',
             domain: [0, 1]
         },
         yaxis5: {
-            title: 'ppm',
+            title: 'ppb',
             domain: [0, 0.90]
         },
     };
@@ -122,7 +122,7 @@ var  plotLayout = ()=> {
             domain: [0, 1]
         },
         yaxis7: {
-            title: 'ppb',
+            title: 'ppm',
             domain: [0, 0.90]
         },
     };
