@@ -1,9 +1,9 @@
 {
-  "name": "bio",
+  "name": "road-care",
   "version": "0.0.1",
   "main": "main.js",
   "scripts": {
-    "start": "concurrently \"rosrun jetson capt_client.py\" \"roslaunch rosbridge_server bio.launch\" \"rosrun jetson spine_server_bio.py\" \"sleep 3 && electron .\" "
+    "start": "concurrently \" electron .\" "
   },
   "author": "",
   "license": "ISC",
@@ -19,13 +19,14 @@
     "npm-run-all": "^4.1.5",
     "plotty": "^0.3.1",
     "popper.js": "^1.14.7",
+    "requirejs": "^2.3.6",
     "roslib": "^1.0.1"
   },
   "devDependencies": {
     "electron": "^3.1.8",
     "electron-rebuild": "^1.8.4"
   },
-  "description": "Life Science Task Gui Rudra",
+  "description": "emergency road care",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LochanRn/organic.git"
