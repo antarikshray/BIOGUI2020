@@ -253,3 +253,8 @@
 .fixed-plugin ul > li:last-child a{
     margin-bottom: 15px;
 }
+
+#yoyo{
+    text-align: center;
+    padding-top: 20%;
+}

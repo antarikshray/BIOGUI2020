@@ -1,5 +1,3 @@
-// var websocket = require('./webS');
-// var rosPublish = require('./sendData');
 var ROSLIB = require('roslib');
 window.firstname="";
 window.lastname="";
@@ -75,6 +73,6 @@ $('#finish').click(function () {
     street_no=street.toString();
 
     console.log('values set');
-
+    window.location.href = 'file:///home/nikki99/SIH/ROAD%20CARE/indexFinal.html';
     pub();
  });
