@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "main.js",
   "scripts": {
-    "start": "concurrently \" electron .\" "
+    "start": "concurrently \"roslaunch rosbridge_server rosbridge_websocket.launch\" \"sleep 5 && electron .\" "
   },
   "author": "",
   "license": "ISC",

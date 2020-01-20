@@ -4,6 +4,7 @@ window.lastname="";
 window.mobileno=""; //
 window.email_personal="";
 window.vehicleno=""; 
+window.device="";
 window.ins_det="";
 window.email_ins="";
 window.emer_name="";
@@ -38,6 +39,7 @@ var publisher = new ROSLIB.Topic({
   });
 
   var sendmsg = new ROSLIB.Message({
+      ID : device,
       Fname : firstname,
       Lname : lastname,
       PhNo : mobileno,
@@ -60,6 +62,7 @@ $('#finish').click(function () {
     mob1= $('#mobileno').val();
     email_personal=$('#email-personal').val();
     vehicleno= $('#vehicleno').val();
+    device= $('#device').val();
     ins_det= $('#ins-det').val();
     email_ins= $('#email-ins').val();
     emer_name= $('#emer-name').val();
@@ -73,6 +76,6 @@ $('#finish').click(function () {
     street_no=street.toString();
 
     console.log('values set');
-    window.location.href = 'file:///home/nikki99/SIH/ROAD%20CARE/indexFinal.html';
     pub();
+    //window.location.href = 'file:///home/nikki99/SIH/ROAD%20CARE/indexFinal.html';
  });
